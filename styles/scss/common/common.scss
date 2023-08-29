@@ -1,0 +1,483 @@
+@font-face {
+    font-family: "Inter-SemiBold";
+    src:
+        url("../fonts/Inter-SemiBold.woff2") format("woff2"),
+        url("../fonts/Inter-SemiBold.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Inter-Regular";
+    src:
+        url("../fonts/Inter-Regular.woff2") format("woff2"),
+        url("../fonts/Inter-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Inter-Medium";
+    src:
+        url("../fonts/Inter-Medium.woff2") format("woff2"),
+        url("../fonts/Inter-Medium.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    font-family: "Inter-Medium", sans-serif;
+    font-weight: 400;
+    background: url("../images/bg/bg.jpg") top center/cover no-repeat;
+    color: map-get($color, "white");
+    min-width: 320px;
+}
+
+.container {
+    width: min(100% - 172px, 1462px);
+    margin-inline: auto;
+}
+
+@include laptop {
+    .container {
+        width: min(100% - 48px, 894px);
+    }
+}
+
+@include tablet {
+    .container {
+        width: min(100% - 40px, 688px);
+    }
+}
+
+@include mobile {
+    .container {
+        width: min(100% - 16px, 343px);
+    }
+}
+
+.logo {
+    display: flex;
+    width: 96px;
+    height: 86px;
+
+    &__icon {
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@include desktop {
+    .logo {
+        width: 72px;
+        height: 65px;
+    }
+}
+
+@include laptop {
+    .logo {
+        width: 64px;
+        height: 58px;
+    }
+}
+
+@include mobile {
+    .logo {
+        width: 56px;
+        height: 50px;
+    }
+}
+
+.socials {
+    display: flex;
+    gap: 6px;
+
+    &__link {
+        @extend %flex;
+        padding: 5px;
+
+        & svg {
+            height: 24px;
+            width: 24px;
+            fill: map-get($color, "white");
+            @extend %opacity;
+            @extend %transition;
+        }
+
+        &:is(:hover, :focus) {
+            &.socials__link svg {
+                fill: map-get($color, "red");
+            }
+        }
+    }
+
+    &__icon {
+        height: 24px;
+        width: 24px;
+    }
+}
+
+@media (max-width: 500px) {
+    .socials {
+        display: none;
+    }
+}
+
+.btns {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.btn {
+    @extend %flex;
+    padding: 16px 32px;
+    border: 2px solid map-get($color, "white");
+    border-radius: 5px;
+    color: map-get($color, "white");
+    font-family: "Inter-Medium", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 140%;
+    background: transparent;
+    height: min-content;
+    width: max-content;
+    @extend %transition;
+
+    &:is(:hover, :focus) {
+        background: map-get($color, "red");
+    }
+
+    &.reg {
+        border: none;
+        font-family: "Inter-SemiBold", sans-serif;
+        font-weight: 600;
+        padding: 16px 22px;
+        @extend %opacity;
+
+        &:is(:hover, :focus) {
+            background: transparent;
+            color: map-get($color, "red");
+        }
+    }
+
+    &-primary {
+        font-family: "Inter-SemiBold";
+        font-weight: 600;
+        font-size: 26px;
+        border: 2px solid map-get($color, "red");
+        background: map-get($color, "red");
+        padding: 22px 38px;
+        @extend %transition;
+
+        &:is(:hover, :focus) {
+            color: map-get($color, "dark");
+        }
+    }
+}
+
+@include desktop {
+    .btn {
+        font-size: 16px;
+        padding: 9px 22px;
+
+        &-primary {
+            font-weight: 600;
+            font-size: 20px;
+            padding: 16px 30px;
+        }
+    }
+}
+
+@include laptop {
+    .btn-primary {
+        font-size: 18px;
+        padding: 14px 26px;
+    }
+}
+
+@media (max-width: 900px) {
+    .btn-primary {
+        font-size: 17px;
+        padding: 14px 21px;
+    }
+}
+
+@include tablet {
+    .btn {
+        &-primary {
+            font-size: 17px;
+            padding: 14px 22px;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .btn.btn-primary {
+        width: 100%;
+        padding: 14px 22px;
+    }
+}
+
+@include mobile {
+    .btn {
+        padding: 7px 22px;
+    }
+}
+
+@media (max-width: 500px) {
+    .reg {
+        display: none;
+    }
+}
+
+@media (max-width: 385px) {
+    .btn.btn-primary {
+        font-size: 15px;
+        padding: 12px;
+    }
+}
+
+.show {
+    @extend %flex;
+    font-family: "Inter-Regular", sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 140%;
+    color: map-get($color, "white");
+    background: transparent;
+    margin: 0 0 0 auto;
+    @extend %transition;
+
+    &:is(:hover, :focus) {
+        color: map-get($color, "red");
+    }
+
+    &:active {
+        & svg {
+            transform: rotate(180deg);
+        }
+    }
+
+    & svg {
+        margin: 5px 0 0 0;
+        height: 32px;
+        width: 32px;
+        @extend %transition;
+    }
+}
+
+@media (max-width: 1560px) {
+    .show {
+        font-size: 14px;
+    }
+}
+
+.help {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-family: "Inter-SemiBold", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 140%;
+
+    &__box {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    &__wrap {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__item {
+        &:first-child {
+            margin: 10px 0 0 0;
+        }
+    }
+
+    &__link {
+        font-family: "Inter-Medium", sans-serif;
+        font-weight: 400;
+        font-size: 18px;
+        color: map-get($color, "white");
+        line-height: 140%;
+        opacity: 0.8;
+        @extend %transition;
+
+        &:is(:hover, :focus) {
+            color: map-get($color, "red");
+        }
+    }
+}
+
+@include desktop {
+    .help {
+        font-size: 16px;
+        gap: 8px;
+
+        &__link {
+            font-size: 14px;
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    .help__wrap {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+    }
+}
+
+@media (max-width: 350px) {
+    .help__wrap {
+        flex-direction: column;
+    }
+}
+
+.chat {
+    font-family: "Inter-Medium", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    opacity: 0.8;
+    margin: 50px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    &__item {
+        display: flex;
+        gap: 24px;
+    }
+
+    &__messenger {
+        @extend %flex;
+        width: 40px;
+        height: 40px;
+        @extend %transition;
+
+        &:is(:hover, :focus) {
+            transform: translateY(-5px);
+        }
+
+        & img {
+            object-fit: contain;
+            height: 100%;
+            width: 100%;
+        }
+    }
+}
+
+@include desktop {
+    .chat {
+        font-size: 14px;
+        margin: 32px 0 0 0;
+        gap: 8px;
+
+        &__item {
+            gap: 16px;
+        }
+
+        &__messenger {
+            width: 32px;
+            height: 32px;
+        }
+    }
+}
+
+@media (max-width: 350px) {
+    .chat {
+        margin: 16px 0 0 0;
+    }
+}
+
+.partners {
+    margin: 50px 35px;
+    &__list {
+        display: flex;
+        gap: 20px;
+    }
+
+    &__item {
+        @extend %flex;
+        height: 40px;
+    }
+
+    &__icon {
+        object-fit: contain;
+        height: 100%;
+        width: 100%;
+    }
+}
+
+@include desktop {
+    .partners {
+        margin: 50px 0 16px;
+
+        &__item {
+            height: 32px;
+        }
+    }
+}
+
+@include laptop {
+    .partners {
+        margin: 30px 0 16px;
+    }
+}
+
+@include mobile {
+    .partners {
+        margin: 32px 0;
+
+        &__list {
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 24px;
+        }
+    }
+}
+.copyright {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 10px;
+    font-size: 15px;
+    padding: 0 0 20px 0;
+
+    &__item {
+        &:first-child {
+            text-transform: uppercase;
+        }
+    }
+}
+
+@include desktop {
+    .copyright {
+        font-size: 11px;
+
+        &__item {
+            &:last-child {
+                list-style: inside;
+            }
+        }
+    }
+}
+
+@include mobile {
+    .copyright {
+        flex-direction: column;
+        align-items: center;
+
+        &__item:last-child {
+            list-style: none;
+        }
+    }
+}

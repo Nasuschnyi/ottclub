@@ -1,0 +1,40 @@
+.title {
+    font-family: "Inter-SemiBold", sans-serif;
+    font-weight: 600;
+    font-size: 56px;
+    line-height: 120%;
+
+    &__wrap {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 0 14px 0;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        padding: 70px 0 0 0;
+        max-width: 95%;
+    }
+}
+
+.subtitle {
+    font-size: 26px;
+    line-height: 140%;
+    opacity: 0.8;
+    margin: 0 0 20px 0;
+}
+
+.pic {
+    position: relative;
+    height: 660px;
+
+    &__img {
+        position: absolute;
+        top: -30px;
+        left: -35px;
+        object-fit: contain;
+        height: 100%;
+    }
+}

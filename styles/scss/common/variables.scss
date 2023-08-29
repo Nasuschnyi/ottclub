@@ -1,0 +1,28 @@
+//Variables
+$brkPoint: (
+    "2xl": 1920 px,
+    //desktop-big
+    "xl": 1440px,
+    //desktop
+    "lg": 990px,
+    //laptop
+    "md": 768px,
+    //tablet
+    "sm": 375px,
+    //mobile
+    "xs": 320px,
+    //small
+);
+
+$color: (
+    "dark": #1a1818,
+    "primary": #d0d0d1,
+    "tv-border": #c6c6c8,
+    "red": #ff1f1f,
+    "white": #ffffff,
+    "yellow": #eec63b
+);
+
+$hover: (
+    "gray": #757575
+);

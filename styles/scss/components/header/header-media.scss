@@ -1,0 +1,23 @@
+@include desktop {
+    .header {
+        padding: 26.5px 0;
+    }
+}
+
+@include laptop {
+    .header {
+        padding: 30px 0;
+    }
+}
+
+@include tablet {
+    .header {
+        padding: 26px 0;
+    }
+}
+
+@include mobile {
+    .header {
+        padding: 15px 0;
+    }
+}

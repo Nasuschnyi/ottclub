@@ -1,0 +1,42 @@
+.section-content {
+    padding: 65px 0 85px;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    gap: 32px;
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    &__icon {
+        width: 96px;
+        height: 96px;
+        margin: 0 0 16px 0;
+    }
+
+    &__title {
+        font-family: "Inter-SemiBold", sans-serif;
+        font-weight: 600;
+        font-size: 24px;
+    }
+
+    &__desc {
+        font-size: 20px;
+        line-height: 150%;
+        opacity: 0.8;
+        max-width: 302px;
+
+        &.second {
+            max-width: 220px;
+        }
+
+        &.third {
+            max-width: 235px;
+        }
+    }
+}

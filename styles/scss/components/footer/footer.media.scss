@@ -1,0 +1,49 @@
+@include desktop {
+    .footer {
+        &__wrap {
+            padding: 64px 0 0 0;
+        }
+
+        &__link {
+            font-size: 14px;
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    .footer {
+        &__nav {
+            grid-template-columns: 1fr;
+        }
+
+        &__list {
+            &:last-child {
+                & .footer__item {
+                    text-align: right;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 350px) {
+    .footer {
+        &__wrap {
+            padding: 48px 0 0 0;
+        }
+
+        &__box {
+            flex-direction: column;
+        }
+
+        &__list {
+            width: 100%;
+
+            &:last-child {
+                & .footer__item {
+                    text-align: left;
+                }
+            }
+        }
+    }
+}
